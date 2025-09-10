@@ -1,0 +1,17 @@
+json
+{
+  "sample_tokens": [
+    {
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "address": "0x0000000000000000000000000000000000000000",
+      "network": "ethereum"
+    },
+    {
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "address": "0xA0b86a33E6417c92D27f1e7fe66a86c53bc5b3c4",
+      "network": "ethereum"
+    }
+  ]
+}
