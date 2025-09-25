@@ -16,6 +16,10 @@ class Config:
             'rpc_url': INFURA_URL,
             'chain_id': 1
         },
+        'binance': {
+            'rpc_url': 'https://bsc-dataseed1.binance.org',
+            'chain_id': 56
+        },
         'polygon': {
             'rpc_url': 'https://polygon-rpc.com',
             'chain_id': 137
