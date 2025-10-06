@@ -1,0 +1,17 @@
+{
+  "analyzer": {
+    "starting_analysis": "Розпочинаємо аналіз токену",
+    "analysis_complete": "Аналіз завершено",
+    "generating_report": "Генеруємо звіт",
+    "error_occurred": "Виникла помилка",
+    "invalid_address": "Некоректна адреса токену",
+    "network_not_supported": "Мережа не підтримується"
+  },
+  "report": {
+    "title": "Звіт аналізу Web3 проекту",
+    "generated_at": "Згенеровано",
+    "token_info": "Інформація про токен",
+    "risk_assessment": "Оцінка ризиків",
+    "recommendations": "Рекомендації"
+  }
+}
