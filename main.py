@@ -11,6 +11,19 @@ from src.web3_analyzer import Web3Analyzer
 from src.report_generator import ReportGenerator
 from config import Config
 
+import logging
+
+# Налаштування логування
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('analyzer.log'),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
+
 def main():
     parser = argparse.ArgumentParser(description='Аналіз Web3 проектів з AI інтеграцією')
     parser.add_argument('--token', type=str, help='Адреса токену для аналізу')
@@ -29,7 +42,8 @@ def main():
         analyzer = Web3Analyzer(args.network)
         
         # Базовий аналіз
-        print(f"Аналізую токен {args.token} в мережі {args.network}...")
+        logger.info(f"Початок аналізу токену {args.token} в мережі {args.network}")
+
         analysis_result = analyzer.analyze_token(args.token)
         
         # AI аналіз якщо потрібно
