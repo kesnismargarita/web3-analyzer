@@ -10,6 +10,18 @@ import sys
 from src.web3_analyzer import Web3Analyzer
 from src.report_generator import ReportGenerator
 from config import Config
+import logging
+
+# Налаштування логування
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('analyzer.log'),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
 
 import logging
 
