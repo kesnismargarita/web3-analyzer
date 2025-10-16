@@ -42,6 +42,8 @@ def main():
     parser.add_argument('--network', type=str, default='ethereum', help='Мережа блокчейну')
     parser.add_argument('--output', type=str, default='report.json', help='Файл для збереження звіту')
     parser.add_argument('--ai-analysis', action='store_true', help='Включити AI аналіз')
+    parser.add_argument('--csv-export', action='store_true', help='Експорт результатів у CSV')
+
     
     args = parser.parse_args()
     
@@ -69,6 +71,13 @@ def main():
         # Генерація звіту
         report_gen = ReportGenerator()
         report_gen.save_report(analysis_result, args.output)
+        
+        # CSV експорт якщо потрібно
+        if args.csv_export:
+            csv_filename = args.output.replace('.json', '.csv')
+            report_gen.generate_csv_report(analysis_result, csv_filename)
+            print(f"CSV звіт збережено в {csv_filename}")
+
         
         print(f"Аналіз завершено! Звіт збережено в {args.output}")
         
