@@ -25,13 +25,13 @@ class AIAnalyzer:
         
         try:
             response = self.client.chat.completions.create(
-                model="grok-beta",
+                model="grok-2-1212",
                 messages=[
                     {"role": "system", "content": "Ти експерт з Web3 та DeFi аналізу. Надай детальний аналіз токену."},
                     {"role": "user", "content": prompt}
                 ],
                 max_tokens=1000,
-                temperature=0.7
+                temperature=0.3
             )
             
             ai_analysis = response.choices[0].message.content
