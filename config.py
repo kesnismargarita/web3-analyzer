@@ -9,6 +9,10 @@ class Config:
     INFURA_URL = os.getenv('INFURA_URL', 'https://mainnet.infura.io/v3/YOUR_PROJECT_ID')
     DEFAULT_ANALYSIS_DEPTH = 'basic'
     MAX_TOKENS_TO_ANALYZE = 10
+    REQUEST_TIMEOUT = 30
+    API_RETRY_COUNT = 3
+    RATE_LIMIT_DELAY = 1.0
+
     
     # Налаштування для різних мереж
     NETWORKS = {
