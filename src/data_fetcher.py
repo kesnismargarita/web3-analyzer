@@ -40,5 +40,11 @@ class DataFetcher:
             response = self.session.get(url, params=params, timeout=10)
             response.raise_for_status()
             return response.json()
+        except requests.exceptions.Timeout:
+            return {'error': 'Timeout error - server did not respond in time'}
+        except requests.exceptions.ConnectionError:
+            return {'error': 'Connection error - unable to reach server'}
+        except requests.exceptions.HTTPError as e:
+            return {'error': f'HTTP error {e.response.status_code}: {e.response.reason}'}
         except requests.exceptions.RequestException as e:
-            return {'error': str(e)}
+            return {'error': f'Request error: {str(e)}'}
