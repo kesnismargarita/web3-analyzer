@@ -19,9 +19,12 @@ class Web3Analyzer:
         
     def analyze_token(self, token_address: str) -> Dict[str, Any]:
         """Аналіз токену за адресою"""
-        # Перевірка валідності адреси
+        # Перевірка валідності адреси з детальним логуванням
+        if not token_address:
+            raise ValueError("Адреса токену не може бути пустою")
         if not Web3.is_address(token_address):
-            raise ValueError("Невалідна адреса токену")
+            raise ValueError(f"Невалідна адреса токену: {token_address}")
+
         
         token_address = Web3.to_checksum_address(token_address)
         
