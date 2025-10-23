@@ -9,11 +9,19 @@ from typing import Dict, Any
 from config import Config
 
 class Web3Analyzer:
+    @staticmethod
+    def get_supported_networks():
+        """Повертає список підтримуваних мереж"""
+        from config import Config
+        return list(Config.NETWORKS.keys())
+
     def __init__(self, network: str = 'ethereum'):
         self.network = network
         self.config = Config.NETWORKS.get(network)
         if not self.config:
-            raise ValueError(f"Непідтримувана мережа: {network}")
+            supported = ', '.join(self.get_supported_networks())
+            raise ValueError(f"Непідтримувана мережа: {network}. Підтримувані: {supported}")
+
         
         self.w3 = Web3(Web3.HTTPProvider(self.config['rpc_url']))
         
