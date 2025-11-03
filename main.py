@@ -42,10 +42,16 @@ def main():
     parser.add_argument('--network', type=str, default='ethereum', help='Мережа блокчейну')
     parser.add_argument('--output', type=str, default='report.json', help='Файл для збереження звіту')
     parser.add_argument('--ai-analysis', action='store_true', help='Включити AI аналіз')
+    parser.add_argument('--batch-file', type=str, help='Файл з адресами токенів для batch аналізу')
     parser.add_argument('--csv-export', action='store_true', help='Експорт результатів у CSV')
 
     
     args = parser.parse_args()
+    # Перевірка режиму batch аналізу
+    if args.batch_file and args.token:
+        print("Помилка: Неможна використовувати --token та --batch-file одночасно")
+        sys.exit(1)
+
     
     if not args.token:
         print("Помилка: Необхідно вказати адресу токену")
