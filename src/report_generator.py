@@ -42,10 +42,32 @@ class ReportGenerator:
         <head>
             <title>Web3 Analysis Report</title>
             <style>
-                body {{ font-family: Arial, sans-serif; margin: 20px; }}
-                .header {{ background-color: #f4f4f4; padding: 10px; }}
-                .section {{ margin: 20px 0; }}
-                .data {{ background-color: #f9f9f9; padding: 10px; }}
+                body {
+                      font-family: 'Segoe UI', Arial, sans-serif;
+                      margin: 20px;
+                      background-color: #f5f5f5;
+                }
+                .header {
+                        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                        color: white;
+                        padding: 20px;
+                        border-radius: 8px;
+                        margin-bottom: 20px;
+                        }
+                .section {
+                        margin: 20px 0;
+                        background: white;
+                        padding: 15px;
+                        border-radius: 8px;
+                        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                }
+                .data {
+                    background-color: #f8f9fa;
+                    padding: 15px;
+                    border-radius: 4px;
+                    border-left: 4px solid #667eea;
+                }
+
             </style>
         </head>
         <body>
