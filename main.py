@@ -6,11 +6,14 @@ Web3 Project Analyzer
 """
 
 import argparse
-import sys
-from src.web3_analyzer import Web3Analyzer
-from src.report_generator import ReportGenerator
-from config import Config
 import logging
+import sys
+from pathlib import Path
+
+# Локальні імпорти
+from config import Config
+from src.report_generator import ReportGenerator
+from src.web3_analyzer import Web3Analyzer
 
 # Налаштування логування
 logging.basicConfig(
